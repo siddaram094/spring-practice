@@ -63,7 +63,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 	public void configure(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeHttpRequests()
 					.antMatchers("/student/updateStudent").hasAnyRole("USER","ADMIN")
-					.antMatchers("/book").hasAnyRole("ADMIN")
+					.antMatchers("/book/**").hasAnyRole("ADMIN")
 					.antMatchers("/user").authenticated()
 					.antMatchers("/swagger-ui").permitAll()
 					.and()
