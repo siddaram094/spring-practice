@@ -19,7 +19,7 @@ public class BookIssuence {
 	public static BookIssue getBookToIssue(BookIssuence issueBook) {
 		BookIssue bookIssue= new BookIssue();
 		LocalDate today = LocalDate.now();
-		LocalDate returnDate = today.plusDays(15);
+		LocalDate returnDate = today.plusDays(15); 
 		
 		//builder pattern to construct the object of BookIssue
 		bookIssue.setUsn(issueBook.getUsn())

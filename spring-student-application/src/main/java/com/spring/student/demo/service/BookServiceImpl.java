@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import com.spring.student.demo.entity.Book;
+import com.spring.student.demo.error.BookNotFoundException;
 import com.spring.student.demo.repositories.BookRepository;
 
 @Service
@@ -21,7 +22,7 @@ public class BookServiceImpl implements BookService {
 			bookRepository.save(book);
 			return "book saved successfully";
 		}
-		return "book already exists";
+		throw new BookNotFoundException("Book Already Exists"); 
 	}
 
 	@Override
