@@ -13,9 +13,13 @@ import com.spring.student.demo.repositories.BookIssueReturnRepository;
 public class BookIssueServiceImpl implements BookIssueService {
 
 	private static Logger logger = LoggerFactory.getLogger(BookIssueServiceImpl.class);
-	@Autowired
+	
 	BookIssueReturnRepository bookIssueReturnRepository;
 	
+	public BookIssueServiceImpl(BookIssueReturnRepository bookIssueReturnRepository) {
+		this.bookIssueReturnRepository = bookIssueReturnRepository;
+	}
+
 	@Override
 	public String issueBook(BookIssue bookIssue) { 
 		logger.info("book issue info :: "+bookIssue);
