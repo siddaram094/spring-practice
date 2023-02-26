@@ -50,6 +50,12 @@ public class BookServiceImpl implements BookService {
 		return "No Books found for ISBN  " + bookIsbn;
 	}
 
+	@Override
+	public Book getBookByISBN(String bookIsbn) {
+		Book bookDB = bookRepository.findByBookIsbn(bookIsbn);
+		return bookDB;
+	}
+
 	
 
 }

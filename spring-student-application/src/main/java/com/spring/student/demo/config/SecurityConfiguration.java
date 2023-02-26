@@ -67,6 +67,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 					.antMatchers("/user").authenticated()
 					.antMatchers("/bookIssueReturn").authenticated()
 					.antMatchers("/swagger-ui").permitAll()
+					.antMatchers("/kafka/**").permitAll()
 					.and()
 					.httpBasic();
 

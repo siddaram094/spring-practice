@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.spring.student.demo.entity.BookIssue;
 import com.spring.student.demo.entity.BookIssuence;
+import com.spring.student.demo.entity.BookReturn;
 import com.spring.student.demo.service.BookIssueService;
 
 import io.swagger.annotations.ApiOperation;
@@ -28,6 +29,15 @@ public class BookIssueResourceImpl implements BookIssueResource {
 		BookIssue bookIssue= BookIssuence.getBookToIssue(issueBook);
 		logger.info("bookIssue data :: "+bookIssue); 
 		String response = bookIssueService.issueBook(bookIssue);
+		return new ResponseEntity<Object>(response, HttpStatus.OK);
+	}
+	
+	@ApiOperation(tags="Book Issue",value="provides an option to retunr books issed to students")
+	@Override
+	public ResponseEntity<Object> returnBooks(BookReturn bookReturn) {
+		logger.info("Books retunr request for " + bookReturn); 
+		String response = bookIssueService.returnBook(bookReturn);
+		logger.info("book return response : "+response); 
 		return new ResponseEntity<Object>(response, HttpStatus.OK);
 	}
 

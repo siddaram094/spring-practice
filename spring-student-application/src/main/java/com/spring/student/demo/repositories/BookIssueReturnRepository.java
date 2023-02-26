@@ -12,8 +12,11 @@ import com.spring.student.demo.entity.BookIssue;
 public interface BookIssueReturnRepository extends JpaRepository<BookIssue, Long> {
 	
 	
-	  @Query(value="select book_isbn from springsecurity.book_issue where usn=?1",nativeQuery = true)
+	  @Query(value="select book_isbn from springsecurity.book_issue where usn=?1  and return_flag=false",nativeQuery = true)
 	  public List<String> getListOfIssuedBooks(String usn);
+	  
+	  @Query(value = "select * from springsecurity.book_issue where usn=?1 and return_flag=false",nativeQuery = true)
+	  public List<BookIssue> getAllIssuedBooksForStudent(String usn);
 	 
 
 }

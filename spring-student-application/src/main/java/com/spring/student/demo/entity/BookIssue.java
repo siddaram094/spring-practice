@@ -30,6 +30,7 @@ public class BookIssue {
 	private LocalDate actualReturnDate;
 	private boolean fineFlag=false;
 	private float fine=0;
+	private boolean returnFlag=false;
 	
 	
 	public String getBookIsbn() {
@@ -80,6 +81,15 @@ public class BookIssue {
 	}
 	public BookIssue setFine(float fine) {
 		this.fine = fine;
+		return this;
+	}
+
+	public boolean isReturnFlag() {
+		return returnFlag;
+	}
+
+	public BookIssue setReturnFlag(boolean returnFlag) {
+		this.returnFlag = returnFlag;
 		return this;
 	}
 	

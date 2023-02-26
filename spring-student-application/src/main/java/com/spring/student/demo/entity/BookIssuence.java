@@ -26,10 +26,10 @@ public class BookIssuence {
 				  .setBookIsbn(issueBook.getBookIsbn())
 				  .setFine(0)
 				  .setFineFlag(false)
+				  .setReturnFlag(false)
 				  .setIssueDate(today)
 				  .setReturnDate(returnDate);
+		
 		return bookIssue;
 	}
-	
-	
 }

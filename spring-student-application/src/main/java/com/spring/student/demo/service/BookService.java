@@ -13,4 +13,6 @@ public interface BookService {
 	/* public String editBook(Book book); */
  
 	public String editBook(String bookIsbn, Integer quantity);  
+	
+	public Book getBookByISBN(String bookIsbn);
 }
